@@ -1,0 +1,125 @@
+@import "../variable";
+@import "../mixins";
+.people-talk {
+	//background-image: url(../../../dist/img/peopleTalk_bkg.png); крива адреса, Коля пофіксив.
+	background-image: url(../img/peopleTalk_bkg.png);
+	background-position: center;
+	background-size: cover;
+	padding-top: 57px;
+	padding-bottom: 14px;
+	&__container {
+		font-family: $text_font;
+		font-style: italic;
+		padding: 0 10px;
+		@include container_width;
+	}
+	&__title {
+		font-family: $main_font;
+		@include peopleTalk_phone_title_font;
+		color: $peopleTalk_main_color;
+		text-align: center;
+		margin-bottom: 53px;
+	}
+	&__section {
+		text-align: center;
+		margin-bottom: 45px;
+	}
+	&__section--paragraph {
+		@include peopleTalk_phone--paragraph_font;
+		color: $peopleTalk_main_color;
+		margin-top: 23px;
+	}
+	&__section--paragraph span {
+		display: block;
+	}
+	&__description {
+		text-align: center;
+		font-family: $text_font;
+		color: rgba(162, 145, 165, 1);
+		@include peopleTalk_phone_description_font;
+		margin: 0 10%;
+		padding-bottom: 22px;
+		&::after {
+			margin: auto;
+			content: "";
+			display: block;
+			height: 2px;
+			position: relative;
+			width: 77%;
+			background-color: rgba(100, 87, 102, 1);
+			top: 22px;
+		}
+	}
+}
+
+.box-smash {
+	padding: 0 8%;
+}
+
+.box-codrops {
+	padding: 0 8%;
+}
+.box-w {
+	padding: 0 12%;
+}
+.box-pixel {
+	padding: 0 8%;
+}
+.box-cb {
+	padding: 0 6%;
+}
+.box-tnw {
+	padding: 0 12%;
+}
+
+@media (min-width: $tabletWidth) {
+	.people-talk {
+		padding-top: 86px;
+		&__container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			align-items: baseline;
+		}
+		&__title {
+			margin-bottom: 85px;
+			@include peopleTalk_tablet_title_font;
+		}
+		&__section {
+			width: 45%;
+			padding: 0;
+			&--paragraph span {
+				display: inline;
+			}
+		}
+	}
+
+	.people-talk__description {
+		margin: 0 4%;
+	}
+}
+
+@media (min-width: $desktopWidth) {
+	.people-talk {
+		padding-top: 108px;
+		&__title {
+			@include peopleTalk_desktop_title_font;
+		}
+		&__container {
+			padding: 0 4%;
+		}
+		&__section {
+			width: 31%;
+			padding: 0 18px;
+			box-sizing: border-box;
+			margin-bottom: 111px;
+		}
+		&__description {
+			max-width: 887px;
+			margin: auto;
+		}
+		&__description::after {
+			top: 18px;
+		}
+	}
+}
