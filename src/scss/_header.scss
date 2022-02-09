@@ -1,0 +1,373 @@
+.header {
+	background-image: url(../../dist/img/header_bkg.jpg);
+	background-position: center;
+	background-size: cover;
+	font-family: $main_font;
+
+	//margin-bottom: 129.5px;
+	margin-bottom: 0px;
+	//	https://monosnap.com/file/CVGsry53ouC4afLZj1CdDoFHUorhcf боттом не зовсім такий, виправлю щоб в мене ок стакалось
+
+	&__container {
+		@include container_width;
+	}
+
+}
+
+.nav {
+	padding: 32px 16px 30px 16px;
+	display: flex;
+	background-color: $nav_bkg;
+	align-items: center;
+	justify-content: space-between;
+
+	&__logo--hover {
+		display: none;
+	}
+
+	&__link:active .nav__logo {
+		display: none;
+	}
+
+	&__link:active .nav__logo--hover {
+		height: 41px;
+		width: 43px;
+		display: block;
+		padding-bottom: 2.5px;
+	}
+
+	&__logo--text {
+		display: none;
+		font-family: $text_font;
+	}
+}
+
+.btn {
+	font-family: $main_font;
+	@include header_btn;
+}
+.btn-download:active {
+	@include header_active_btn;
+	// background-color: $btn_active_bkg;
+	border: 2px solid rgba(141, 129, 172, 1);
+	// color: #8d81ac;
+}
+.btn-buy {
+	font-size: 15px;
+	line-height: 15px;
+	font-weight: 700;
+}
+.btn-buy:active {
+	@include header_active_btn;
+	// background-color: $btn_active_bkg;
+	// color: rgba(141, 129, 172, 1);
+	font-weight: 700;
+	border: 1px solid rgba(141, 129, 172, 1);
+}
+.header__burger {
+	position: relative;
+	display: block;
+	cursor: pointer;
+	float: right;
+	width: 26px;
+	height: 21px;
+}
+.header__burger span,
+.header__burger span::after,
+.header__burger span::before {
+	@include header_burger;
+}
+.header__burger span {
+	top: 9px;
+}
+.header__burger span::before {
+	width: 15px;
+	content: " ";
+	top: -9px;
+	right: 0;
+}
+
+.header__burger span::after {
+	content: " ";
+	bottom: -9px;
+}
+.header__burger span.active {
+	transform: rotate(-42deg);
+}
+
+.header__burger span.active::before {
+	background-color: rgba(255, 255, 255, 0);
+	transition: 0ms;
+}
+.header__burger span.active::after {
+	transform: rotate(85deg);
+	top: 0px;
+}
+
+.header__list {
+	display: none;
+	left: 4%;
+	flex-direction: column;
+	position: absolute;
+	background-color: $header_list_bkg;
+	top: 106px;
+
+	&:last-child {
+		box-sizing: border-box;
+		padding-bottom: 14px;
+	}
+}
+
+.animate {
+	display: flex;
+	font-size: 26px;
+	width: 92%;
+}
+.header__link {
+	display: flex;
+	color: $header_white_color;
+	text-decoration: none;
+	padding-top: 29px;
+	padding-bottom: 21px;
+	padding-left: 35px;
+	border-bottom: 3px solid rgba(59, 59, 59, 1);
+
+	&:active {
+		color: $link_active_color;
+		border-left: 8px solid $link_active_color;
+		padding-left: 27px;
+	}
+}
+
+.first-wrap {
+	text-align: center;
+	padding-top: 50px;
+}
+
+.header__title {
+	font-size: 48px;
+	line-height: 48px;
+	font-weight: 700;
+	color: $header_white_color;
+	margin-bottom: 19px;
+}
+
+.header__sub-title {
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 400;
+	color: $header_subTitle_color;
+	margin-bottom: 14px;
+	padding: 0 31px;
+}
+
+.header__text {
+	text-transform: uppercase;
+	display: block;
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: 400;
+	color: $header_text_color;
+	margin-bottom: 344px;
+}
+
+.wraper-download {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	top: 50px;
+}
+
+.btn-download {
+	width: 290px;
+	height: 45px;
+	margin-bottom: 12.5px;
+}
+
+.header__text-trial {
+	color: rgba(132, 142, 151, 1);
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: 400;
+}
+
+.space {
+	display: none;
+}
+
+@media (min-width: $tabletWidth) {
+	.header {
+		//margin-bottom: 216px;
+		margin-bottom: 0px;
+	//	https://monosnap.com/file/CVGsry53ouC4afLZj1CdDoFHUorhcf боттом не зовсім такий, виправлю щоб в мене ок стакалось
+	}
+
+	.nav {
+		padding: 22px 20px 0 20px;
+		flex-wrap: wrap;
+
+		&__link {
+			display: flex;
+			text-decoration: none;
+			align-items: center;
+		}
+
+		&__logo--text {
+			display: block;
+			color: rgba(141, 129, 172, 1);
+			margin-left: 17px;
+			line-height: 16px;
+			cursor: pointer;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 24px;
+		}
+	}
+
+	.header__burger {
+		display: none;
+	}
+
+	.header__title {
+		font-size: 72px;
+		line-height: 72px;
+	}
+
+	.btn-buy {
+		font-size: 16px;
+		line-height: 16px;
+		min-width: 145px;
+	}
+
+	.header__list {
+		display: flex;
+		width: 100%;
+		margin: auto;
+		padding-top: 20px;
+		padding-bottom: 14px;
+		justify-content: space-evenly;
+		flex-direction: row;
+		position: relative;
+		background-color: $nav_bkg;
+		left: 0;
+		top: 0%;
+	}
+
+	.first-wrap {
+		padding-top: 69px;
+	}
+
+	.header__link {
+		padding: 0;
+		color: $link_active_color;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 18px;
+		border: none;
+	}
+
+	.header__sub-title {
+		font-family: $text_font;
+		font-size: 24px;
+		line-height: 24px;
+		font-weight: 400;
+		margin-bottom: 19px;
+		text-transform: lowercase;
+		:first-child {
+			text-transform: uppercase;
+		}
+
+		.dash {
+			display: none;
+		}
+
+		.space {
+			display: inline;
+		}
+	}
+
+	.nav__link:active {
+		.nav__logo--text {
+			color: $header_white_color;
+		}
+	}
+
+	.nav__link:active .nav__logo--hover {
+		padding-bottom: 0px;
+	}
+
+	.header__link:active {
+		border: none;
+		color: $header_white_color;
+		padding: 0;
+	}
+
+	.wraper-download {
+		top: 65px;
+	}
+
+	.btn-download {
+		font-size: 21px;
+		line-height: 23px;
+		width: 390px;
+		height: 62px;
+		margin-bottom: 18.5px;
+	}
+
+	.header__text-trial {
+		line-height: 16px;
+	}
+}
+
+@media (min-width: $desktopWidth) {
+	.nav {
+		flex-wrap: nowrap;
+		background-color: $desktop_header_bkg;
+		padding: 29.5px 0 112.5px 0;
+	}
+
+	.btn-buy {
+		order: 1;
+		margin-right: 7.5%;
+		width: 145px;
+		font-size: 16px;
+		line-height: 17px;
+	}
+
+	.nav__link {
+		margin-left: 7.5%;
+	}
+
+	.header__list {
+		width: 449px;
+		margin-right: 48px;
+		background-color: $desktop_header_bkg;
+	}
+
+	.header__link {
+		border: none;
+	}
+
+	.header__title {
+		font-size: 82px;
+		line-height: 82px;
+	}
+
+	.first-wrap {
+		padding-top: 0;
+	}
+
+	.header__sub-title {
+		font-size: 30px;
+		line-height: 30px;
+	}
+
+	.btn-download {
+		line-height: 22px;
+	}
+
+	.header__text-trial {
+		line-height: 15px;
+	}
+}

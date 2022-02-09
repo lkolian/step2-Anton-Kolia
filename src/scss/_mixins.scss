@@ -1,0 +1,52 @@
+@mixin container_width {
+	margin: auto;
+	max-width: 1200px;
+}
+@mixin header_btn {
+	border-radius: 40px;
+	width: 119px;
+	height: 37px;
+	background-color: rgba(141, 129, 172, 1);
+	border: none;
+	color: white;
+	font-size: 18px;
+	line-height: 15px;
+	font-weight: 700;
+	cursor: pointer;
+}
+@mixin header_active_btn {
+	color: #8d81ac;
+	background-color: $btn_active_bkg;
+}
+@mixin header_burger {
+	width: 26px;
+	position: absolute;
+	height: 3px;
+	background: $header_white_color;
+	display: block;
+	transition: 0.3s;
+	border-radius: 5px;
+}
+@mixin peopleTalk_phone_title_font {
+	font-size: 36px;
+	line-height: 48px;
+	font-weight: 700;
+}
+@mixin peopleTalk_phone--paragraph_font {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 700;
+}
+@mixin peopleTalk_phone_description_font {
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: 400;
+}
+@mixin peopleTalk_tablet_title_font {
+	font-size: 42px;
+	line-height: 44px;
+}
+@mixin peopleTalk_desktop_title_font {
+	font-size: 48px;
+	line-height: 50px;
+}
